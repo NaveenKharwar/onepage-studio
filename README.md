@@ -7,7 +7,7 @@ To Start Development
 ------
 Follow the below commands to **Get Start**.
 
-* `gh repo clone NaveenKharwar/onepage-studio` to clone this repo and cd `onepage-studio` to move *Onepage Studio* project.
+* `gh repo clone NaveenKharwar/onepage-studio` to clone this repo and `cd onepage-studio` to move *Onepage Studio* project.
 * `npm install` To Install all dependecies.
 * `npm run dev` To Output Development Version
 * `npm run watch` Watch Developemnt ( Live Reloading, SCSS to CSS )
@@ -19,3 +19,4 @@ Time Log
 |Task  	|Duration  | 	
 |-	|- |	
 |Setup Environment( Laravel Mix )  	| 10 Minutes  |
+|Bootstrap 5 Setup and Test  	| 10 Minutes  |
