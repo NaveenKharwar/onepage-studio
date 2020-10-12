@@ -1,3 +1,6 @@
-body {
-    background-color: bisque;
-}
+
+$theme-colors: (
+    "primary": #FF841B,
+);
+
+@import "~bootstrap/scss/bootstrap";
