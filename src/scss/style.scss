@@ -31,6 +31,67 @@ $position-values: (
 
 @import "~bootstrap/scss/bootstrap";
 
+// Header
+header {
+  background-image: url("../img/hero.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+// Services
+#services {
+  background-image: url("../img/Services.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// Our Work
+#our-work {
+  .our-work__description {
+    background-image: url("../img/hero.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    .vission-mission {
+      .row > :first-child {
+        background-image: url("../img/circle.png");
+        background-color: #f5f5f5;
+        background-position: 30rem -27px;
+        background-size: 80%;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+
+// CTA
+#cta {
+  background-image: url("../img/cta-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// Counter
+#counter {
+  background-image: url("../img/counter-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// Footer
+footer {
+  background-image: url("../img/footer-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
 // Navigation
 nav {
   .navbar-toggler {
