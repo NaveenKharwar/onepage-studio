@@ -1,6 +1,165 @@
+$body-color: #676767;
+$font-family-base: "Poppins", sans-serif !default;
+$font-weight-medium: 600;
 
 $theme-colors: (
-    "primary": #FF841B,
-);
+  "primary": #ff841b,
+  "secondary": #001a53,
+  "light": #fff,
+  "gray-100": #fafafa,
+  "gray-750": #676767,
+) !default;
+
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer / 4,
+  2: $spacer / 2,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 5,
+  10: $spacer * 10,
+) !default;
+
+$position-values: (
+  0: 0,
+  60: 60%,
+  50: 50%,
+  100: 100%,
+) !default;
 
 @import "~bootstrap/scss/bootstrap";
+
+// Navigation
+nav {
+  .navbar-toggler {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  .navbar-nav {
+    a {
+      font-weight: $font-weight-medium;
+    }
+  }
+}
+
+// Hero
+#hero {
+  span {
+    letter-spacing: 4px;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+}
+#services .card {
+  @extend .box-shadow;
+}
+
+// Slick Theming
+.slick-dots {
+  li {
+    margin: 0 20px;
+    button {
+      width: 70px;
+      height: 70px;
+      &::before {
+        font-size: 50px;
+        width: 70px;
+        height: 70px;
+        content: "__";
+      }
+    }
+    &.slick-active button::before {
+      color: #ff841b;
+    }
+  }
+}
+
+// Our Work and Team Section
+#our-work,
+#our-team {
+  .card {
+    span {
+      color: #9b9b9b;
+    }
+  }
+  & {
+    @extend .slick-dots;
+  }
+}
+
+#our-team {
+  .team-slider {
+    .card {
+      .social-links {
+        background-color: rgb(0 26 83 / 70%);
+        opacity: 0;
+        -moz-transition: opacity 0.4s ease;
+        -o-transition: opacity 0.4s ease;
+        -webkit-transition: opacity 0.4s ease;
+        transition: opacity 0.4s ease;
+      }
+      .profile-picture {
+        &:hover > .social-links {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+#our-work {
+  .vission-mission {
+    .row {
+      @extend .box-shadow;
+    }
+  }
+}
+@include media-breakpoint-up(md) {
+  #our-work {
+    .vission-mission {
+      position: absolute;
+    }
+  }
+}
+
+// Testimonial Section
+.testimonial-slider {
+  @extend .slick-dots;
+}
+
+// Counter Section
+h1#satisfied-customers,
+h1#awwards-winning {
+  &:after {
+    content: "%";
+  }
+}
+
+// Contact us
+.contact-us {
+  .form-control {
+    &::-webkit-input-placeholder {
+      opacity: 0.5;
+    }
+    &:-moz-placeholder {
+      opacity: 0.5;
+    }
+    &::-moz-placeholder {
+      opacity: 0.5;
+    }
+    &:-ms-input-placeholder {
+      opacity: 0.5;
+    }
+    &::-ms-input-placeholder {
+      opacity: 0.5;
+    }
+  }
+  h5 {
+    font-weight: $font-weight-medium;
+  }
+}
