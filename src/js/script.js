@@ -1,5 +1,6 @@
 import { CountUp } from "countup.js";
 
+// Slick Slider Init
 $(".project-slider").slick({
   dots: true,
   infinite: false,
