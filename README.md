@@ -21,7 +21,6 @@ Follow the below commands to **Get Start**.
 
 * `npm run watch` Watch Developemnt ( Live Reloading, SCSS to CSS )
 
-* ~~`npm run prod` To Build Project Production Ready~~
 
   
 
