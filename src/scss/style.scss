@@ -199,7 +199,9 @@ header {
 
 #testimonial {
   .testimonial-slider {
-    @extend .slick-dots;
+    .slick-dots {
+      @include slick-dots;
+    }
   }
 }
 
