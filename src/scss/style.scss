@@ -31,36 +31,24 @@ $position-values: (
 
 @import "~bootstrap/scss/bootstrap";
 
-// Navigation
-nav {
-  .navbar-toggler {
-    &:focus {
-      box-shadow: none;
-    }
-  }
-  .navbar-nav {
-    a {
-      font-weight: $font-weight-medium;
-    }
-  }
-}
+/**
+ * #.# Mixins
+ *
+ */
 
-// Hero
-#hero {
-  span {
-    letter-spacing: 4px;
-  }
-}
-
-.box-shadow {
+@mixin box-shadow {
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
 }
-#services .card {
-  @extend .box-shadow;
+
+@mixin card {
+  .card {
+    span {
+      color: #9b9b9b;
+    }
+  }
 }
 
-// Slick Theming
-.slick-dots {
+@mixin slick-dots {
   li {
     margin: 0 20px;
     button {
@@ -79,18 +67,92 @@ nav {
   }
 }
 
-// Our Work and Team Section
-#our-work,
-#our-team {
-  .card {
-    span {
-      color: #9b9b9b;
+/**
+ * #.# Header Section
+ *
+ * Styles for Header Section.
+ */
+
+header {
+  background-image: url("../img/hero.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  // Navigation
+  nav {
+    .navbar-toggler {
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    .navbar-nav {
+      a {
+        font-weight: $font-weight-medium;
+      }
     }
   }
-  & {
-    @extend .slick-dots;
+  // Hero
+  #hero {
+    span {
+      letter-spacing: 4px;
+    }
   }
 }
+
+/**
+ * #.# Services Section
+ *
+ * Styles for Services Section.
+ */
+
+#services {
+  background-image: url("../img/Services.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .card {
+    @include box-shadow;
+  }
+}
+
+/**
+ * #.# Our Work Section
+ *
+ * Styles for Our Work Section.
+ */
+
+#our-work {
+  .our-work__description {
+    background-image: url("../img/hero.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    .vission-mission {
+      .row {
+        @include box-shadow;
+        & > :first-child {
+          background-image: url("../img/circle.png");
+          background-color: #f5f5f5;
+          background-position: 30rem -27px;
+          background-size: 80%;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+  @include card;
+  .slick-dots {
+    @include slick-dots;
+  }
+}
+
+/**
+ * #.# Team Section
+ *
+ * Styles for Team Section.
+ */
 
 #our-team {
   .team-slider {
@@ -110,37 +172,76 @@ nav {
       }
     }
   }
+  @include card;
+  .slick-dots {
+    @include slick-dots;
+  }
 }
 
-#our-work {
-  .vission-mission {
-    .row {
-      @extend .box-shadow;
+/**
+ * #.# CTA Section
+ *
+ * Styles for CTA Section.
+ */
+
+#cta {
+  background-image: url("../img/cta-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/**
+ * #.# Testimonial Section
+ *
+ * Styles for Testimonial Section.
+ */
+
+#testimonial {
+  .testimonial-slider {
+    @extend .slick-dots;
+  }
+}
+
+/**
+ * #.# Counter Section
+ *
+ * Styles for Counter Section.
+ */
+
+#counter {
+  background-image: url("../img/counter-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  h1#satisfied-customers,
+  h1#awwards-winning {
+    &:after {
+      content: "%";
     }
   }
 }
-@include media-breakpoint-up(md) {
-  #our-work {
-    .vission-mission {
-      position: absolute;
-    }
-  }
+
+/**
+ * #.# Footer Section
+ *
+ * Styles for Footer Section.
+ */
+
+footer {
+  background-image: url("../img/footer-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-// Testimonial Section
-.testimonial-slider {
-  @extend .slick-dots;
-}
+/**
+ * #.# Contact Us Section
+ *
+ * Styles for Contact Us Section.
+ */
 
-// Counter Section
-h1#satisfied-customers,
-h1#awwards-winning {
-  &:after {
-    content: "%";
-  }
-}
-
-// Contact us
 .contact-us {
   .form-control {
     &::-webkit-input-placeholder {
@@ -161,5 +262,18 @@ h1#awwards-winning {
   }
   h5 {
     font-weight: $font-weight-medium;
+  }
+}
+
+/**
+ * #.# Media Queries
+ *
+ */
+
+@include media-breakpoint-up(md) {
+  #our-work {
+    .vission-mission {
+      position: absolute;
+    }
   }
 }
